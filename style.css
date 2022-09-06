@@ -1,0 +1,44 @@
+:root{
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+     /* Text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body{
+    background-image: -moz-linear-gradient(var(--soft-violet), var(--soft-blue));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main{
+    width: 1000px;
+    background: #fff;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.col{
+    width: 50%;
+    padding: 3rem 0;
+}
+
+.img-group img{
+    position: absolute;
+}
+
+.left{
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 4rem;
+}
