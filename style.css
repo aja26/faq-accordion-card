@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 :root{
     --very-dark-desaturated-blue: hsl(238, 29%, 16%);
     --soft-red: hsl(14, 88%, 65%);
@@ -18,10 +20,12 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 main{
     width: 1000px;
+    height: 550px;
     background: #fff;
     border-radius: 1rem;
     display: flex;
@@ -36,9 +40,147 @@ main{
     position: absolute;
 }
 
+.img-group img.women{
+    right: 1rem;
+    bottom: 4rem;
+}
+
 .left{
     background-image: url('images/bg-pattern-desktop.svg');
-    background-size: contain;
+    background-size: cover;
+    background-position: bottom right;
     background-repeat: no-repeat;
     margin-right: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+ul{
+    padding: 0;
+    width: 80%;
+}
+
+li p{
+    display: none;
+}
+
+li.active p{
+    display: block;
+}
+
+li{
+    list-style: none;
+    position: relative;
+    padding:  0.5rem;
+    cursor: pointer;
+}
+
+li:hover strong{
+ color: var(--soft-red);
+}
+
+i{
+    position: absolute;
+    background-image: url(images/icon-arrow-down.svg);
+    height: 15px;
+    width: 12px;
+    right: 1rem;
+    background-repeat: no-repeat;
+    top: 1rem;
+}
+
+li.active i{
+    background-image: url(images/icon-arrow-down.svg);
+    transform: rotate(180deg);
+    top: 0.5rem;
+    right: 1.125rem;
+}
+
+hr{
+    color: var(--light-grayish-blue);
+    opacity: 0.5;
+}
+
+strong, p {
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+}
+
+p{
+    font-size: 12px;
+}
+
+li.active strong{
+    font-weight: 700;
+    color: var(--very-dark-desaturated-bluedark-grayish-blue);
+}  
+
+.box{
+    animation: 3s infinite alternate slideInBox;
+    z-index: 3;
+}
+
+.women{
+    animation: 5s infinite alternate slideInWomen;
+    z-index: 2;
+}
+
+@keyframes slideInBox {
+    from {
+        transform: translateY(20%);
+      }
+    
+      to {
+        transform: translateY(35%);
+      }
+}
+
+@keyframes slideInWomen {
+    from {
+        transform: translateY(-10%);
+      }
+    
+      to {
+        transform: translateY(0%);
+      }
+}
+
+
+@media screen and (max-width: 980px) {
+
+    main{
+        width: 400px;
+        height: 600px;
+        flex-direction: column;
+    }
+
+    .col{
+        width: 100%;
+    }
+    h1{
+        text-align: center;
+    }
+    ul{
+        padding: 0 2.5rem;
+    }
+    i{
+        right: 0;
+    }
+    .left{
+        overflow: visible;
+    }
+     .img-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } 
+    .women, .box{
+        width: 50%;
+    }
+
+    .img-group .women{
+        display: flex;
+    }
 }
