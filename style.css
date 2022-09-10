@@ -14,6 +14,12 @@
     --light-grayish-blue: hsl(240, 5%, 91%);
 }
 
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 body{
     background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
     display: flex;
@@ -24,59 +30,87 @@ body{
 }
 
 main{
-    width: 1000px;
-    height: 550px;
+    width: 900px;
+    height: auto;
     background: #fff;
     border-radius: 1rem;
     display: flex;
 }
+
+details summary::-webkit-details-marker {
+    display:none;
+  }
 
 .col{
     width: 50%;
     padding: 3rem 0;
 }
 
-.img-group img{
+h1{
+    padding: 1.5rem 0;
+    margin:0;
+}
+
+.img-women{
     position: absolute;
+}
+
+.img-women{
+    background-image: url('images/illustration-woman-online-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0rem;
 }
 
 .img-group img.women{
     right: 1rem;
-    bottom: 4rem;
+    bottom: 8rem;
+}
+
+.img-group img.box{
+    width: 30%;
+    left: 0;
 }
 
 .left{
+    display: flex;
+    justify-content: center;
     background-image: url('images/bg-pattern-desktop.svg');
     background-size: cover;
     background-position: bottom right;
     background-repeat: no-repeat;
     margin-right: 4rem;
     position: relative;
-    overflow: hidden;
 }
 
 ul{
     padding: 0;
-    width: 80%;
+    width: 90%;
 }
 
-li p{
-    display: none;
-}
 
-li.active p{
-    display: block;
-}
 
-li{
+details{
     list-style: none;
     position: relative;
-    padding:  0.5rem;
+    padding:  1rem 0;
     cursor: pointer;
 }
 
-li:hover strong{
- color: var(--soft-red);
+details > summary {
+    list-style: none;
+}
+  
+  details summary::-webkit-details-marker {
+    display:none;
+}
+
+details:hover strong{
+    color: var(--soft-red);
 }
 
 i{
@@ -86,14 +120,7 @@ i{
     width: 12px;
     right: 1rem;
     background-repeat: no-repeat;
-    top: 1rem;
-}
-
-li.active i{
-    background-image: url(images/icon-arrow-down.svg);
-    transform: rotate(180deg);
-    top: 0.5rem;
-    right: 1.125rem;
+    top: 1.5rem;
 }
 
 hr{
@@ -110,34 +137,47 @@ p{
     font-size: 12px;
 }
 
-li.active strong{
+details[open] summary strong{
     font-weight: 700;
-    color: var(--very-dark-desaturated-bluedark-grayish-blue);
-}  
+}
+
+details[open] p{
+    margin-top: 0.5rem;
+    width: 95%;
+}
+
+details[open] i{
+    transform: rotate(180deg);
+    top:1rem;
+}
+
 
 .box{
     animation: 3s infinite alternate slideInBox;
     z-index: 3;
+    left: -6rem;
+    top: 8rem;
+    position: absolute;
 }
 
-.women{
+.img-women{
     animation: 5s infinite alternate slideInWomen;
     z-index: 2;
 }
 
 @keyframes slideInBox {
     from {
-        transform: translateY(20%);
+        transform: translateY(10%);
       }
     
       to {
-        transform: translateY(35%);
+        transform: translateY(25%);
       }
 }
 
 @keyframes slideInWomen {
     from {
-        transform: translateY(-10%);
+        transform: translateY(-5%);
       }
     
       to {
@@ -150,37 +190,63 @@ li.active strong{
 
     main{
         width: 400px;
-        height: 600px;
+        height: auto;
         flex-direction: column;
+        margin-top: 5rem;
     }
 
     .col{
         width: 100%;
+        padding: 0rem;
     }
+
     h1{
         text-align: center;
+        padding: 0;
+        margin-bottom: 1rem;
     }
+
     ul{
         padding: 0 2.5rem;
+        width: 100%;
     }
+
     i{
         right: 0;
+        top: 1.5rem;
     }
-    .left{
+
+
+    .col.left{
+        background-image: url('images/bg-pattern-mobile.svg');
         overflow: visible;
+        height:160px;
+        margin: 0 auto;
+        background-size: 100%;
+        width: 80%;   
+        background-position: top;      
     }
-     .img-group {
-        width: 100%;
+
+    .col.right{
+        position: relative;
+        top:-1.25rem;
+        padding: 1.25rem 0;
+    }
+
+     .img-women {
+        height: 400px;
+        background-size: contain;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        top: -12rem;
+        overflow: visible;
     } 
-    .women, .box{
-        width: 50%;
-    }
 
-    .img-group .women{
-        display: flex;
+    .box{
+        width: 30%;
+        top: -5rem;
+        left:0rem;
     }
 }
