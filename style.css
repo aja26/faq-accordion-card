@@ -87,7 +87,7 @@ h1{
     position: relative;
 }
 
-ul{
+.accordian-group{
     padding: 0;
     width: 90%;
 }
@@ -206,7 +206,7 @@ details[open] i{
         margin-bottom: 1rem;
     }
 
-    ul{
+    .accordian-group{
         padding: 0 2.5rem;
         width: 100%;
     }
